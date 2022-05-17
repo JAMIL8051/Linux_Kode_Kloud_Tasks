@@ -62,4 +62,8 @@ apt-get install selinux  or yum selinux* -y
 vi /etc/selinux/config
 SELINUX=disabled
 
+8. Linux remote copy:
+sudo chmod 777 /tmp/nautilus.txt.gpg
+sudo scp /tmp/nautilus.txt.gpg banner@stapp03:/home/webapp
+
 
