@@ -1,0 +1,144 @@
+Apache Cassandra:
+CREATE TABLE books_by_author(
+	author_name TEXT,
+	publish_year INT,
+	book_id UUID,
+	book_name TEXT,
+	rating FLOAT,
+ 	PRIMARY KEY((author_name), publish_year, rating)
+	WITH CLUSTERING ORDER BY
+	(publish_year DESC, rating ASC));
+
+
+
+
+GitHub actions: https://paths.tinkerhub.org/github-actions/
+Linux-admin cheat sheet:
+Task: Changing time zones:
+$ date
+$ timedatectl
+$ sudo timedatectl set-timezone <time_zone_you_want>
+Example:
+$ sudo timedatectl set-timezone Africa/Banjul
+
+Task: File permission in a remote server:
+$ ssh banner@172.16.238.12 then password
+
+$ sudo su
+$ chmod +rx xfusion.sh
+Task creating a user with a non-interactive shell
+$ ssh tony@<ip_address>
+passwrod
+$ sudo su
+Checked first id james
+$ id james
+id: james: no such user
+$ add user james -s /sbin/nologin
+Check:
+id james
+$ cat /etc/passwd | grep james
+
+NTP_setup task:
+Ususal login then 
+sudo su
+sudo apt-get update
+rpm -qa | grep ntp
+ntpq
+ntpq> quit
+ntpstat
+
+ntpstat
+systemctl status ntp
+systemctl status ntpd
+systemctl start ntpd
+systemctl status ntpd
+
+7th May 2022:
+Install a package:
+sudo yum install squid
+check this link:
+https://www.2daygeek.com/enable-disable-services-on-boot-linux-chkconfig-systemctl-command/
+systemctl status squid
+systemctl enable squid
+systemctl start squid
+
+# Task Mariadb troubleshooting:
+Regular ssh to jump to the DB server: ssh peter@stdb01 -> password
+sudo su -> to root user
+systemctl status mariadb
+systemctl enable mariadb
+systemctl start mariadb -> error khaba then check log with journalctl -xe -u mariadb
+cd /var/lib
+ls -la
+chown -R mysql:mysql mysql
+systemctl start mariadb
+systemctl status mariadb
+
+# Task SE LINux 
+apt-get install selinux 
+ yum selinux* -y 
+vi /etc/selinux/config
+SELINUX=disabled
+
+ Dear aspirants!
+
+I have been actively looking for opportunities as a Python developer. I want to have some ideas and suggestions as to how to become a good Python developer.
+
+
+
+
+
+Terraform:
+a. An infrastructure as code tool 
+b. lets anyone to define both cloud and on-prem resources in human-readable configuration files that one can version, reuse, and share. 
+c. Can then use a consistent workflow to provision and manage all of the infrastructure throughout its lifecycle. 
+d. Terraform can manage low-level components like compute, storage, and networking resources. 
+e. Also, high-level components like DNS entries and SaaS features
+
+To deploy infrastructure with Terraform:
+Scope - Identify the infrastructure for your project.
+Author - Write the configuration for your infrastructure.
+Initialize - Install the plugins Terraform needs to manage the infrastructure.
+Plan - Preview the changes Terraform will make to match your configuration.
+Apply - Make the planned changes.
+
+Six main concepts of Terraform:
+Source: https://openupthecloud.com/the-six-fundamentals-of-terraform/
+
+Tiny example:
+
+terraform {
+  version = "0.11.13"
+}
+
+provider "aws" {
+  region = "eu-central-1"
+}
+
+resource "aws_s3_bucket" "your_new_bucket" {
+  bucket = "my-first-website-cloud-native-website"
+  acl    = "public-read"
+
+  website {
+    index_document = "index.html"
+  }
+}
+
+a) The basic structure of the language of Terraform is Hashicorp Configuration Language (HCL) 
+Need to know how to configure and create resources using this language. An example: 
+
+terraform_command "provider_resource_name" "resource_name" {
+   "option_1": "option_1",
+   "option_1": "option_1"
+}
+
+b) Planning & Applying — Plans are how Terraform knows what changes to make. 
+Using the terraform plan and terraform apply commands we can safely make infrastructure changes.
+
+c) State — How Terraform knows the infrastructure that we want to manage and change. We discuss how it’s created, updated, stored and more.
+
+d) Dependency Resolution — How Terraform uses dependency graphs to know the order to create our infrastructure.
+
+e) File Structure — How we should structure our Terraform code and our project layouts. .terraform folder, .tfstate like a json file for backend of terraform
+
+f) Providers — How Terraform hooks into the third-party tooling that we want to create our infrastructure in/on.
