@@ -66,4 +66,23 @@ SELINUX=disabled
 sudo chmod 777 /tmp/nautilus.txt.gpg
 sudo scp /tmp/nautilus.txt.gpg banner@stapp03:/home/webapp
 
+9. Linux Postfix Troubleshooting:
+regular ssh commands
+$ ssh groot@stmail01 vai wiki
+$ sudo su
+$ systemctl start postfix
+$ systemctl status postfix -l 
+$ cat /etc/postfix/main.cf |grep inet_interface
+error:
+inet_interfaces = localhost
+$ vi /etc/postfix/main.cf
+edit the localhost parameter with # like fixing syntax error
+after fix
+#inet_interfaces = localhost
+$ systemctl start postfix
+$ systemctl status postfix
+check by:
+$ telnet stmail01 25
+
+
 
