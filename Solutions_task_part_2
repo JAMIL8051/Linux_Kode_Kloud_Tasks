@@ -1,5 +1,16 @@
 Task:
 Create a cron job:
+$ ssh tony@stapp01 
+$ sudo su 
+$ yum install cronie -y
+$ systemctl start crond.service
+$ systemctl status crond.service
+$ crontab -e
+$ crontab -l
+$ ll /tmp/
+Repeat same for the rest two application servers
+
+
 
 
 Task: Linux User Files
