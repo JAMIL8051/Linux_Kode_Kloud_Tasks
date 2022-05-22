@@ -1,0 +1,14 @@
+Task:
+Create a cron job:
+
+
+Task: Linux User Files
+$ ssh steve@stapp02
+provide password
+$ sudo su
+password
+$ ll /home/usersdata
+$ ll /media
+$ find /home/usersdata/ -type f -user kirsty |wc -l
+$ find /home/usersdata/ -type f -user kirsty -exec cp --parent {} /media \;
+$ ll /media/home/usersdata/
