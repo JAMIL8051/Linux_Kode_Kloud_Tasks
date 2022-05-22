@@ -10,5 +10,6 @@ password
 $ ll /home/usersdata
 $ ll /media
 $ find /home/usersdata/ -type f -user kirsty |wc -l
-$ find /home/usersdata/ -type f -user kirsty -exec cp --parent {} /media \;
+$ find /home/usersdata/ -type f -user kirsty -exec cp --parent {} /media \; 
+Ref: https://stackoverflow.com/questions/2961673/find-missing-argument-to-exec
 $ ll /media/home/usersdata/
