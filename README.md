@@ -1,7 +1,7 @@
-# Linux_Kode_Kloud_Tasks
-Kode Kloud Tasks as a System Admin
+# Kode_Kloud_DevOps_Engineer_Tasks
+Kode Kloud Tasks as a DevOps Engineer
 
-This repository contains the solutions to the System Admin tasks in the Kode Kloud Engineering platform.
+This repository contains the solutions to the DevOps Engineer tasks in the Kode Kloud Engineering platform.
 https://www.kodekloud-engineer.com/#!/login
 
 
