@@ -10,9 +10,6 @@ $ crontab -l
 $ ll /tmp/
 Repeat same for the rest two application servers
 
-
-
-
 Task: Linux User Files
 $ ssh steve@stapp02
 provide password
@@ -24,3 +21,14 @@ $ find /home/usersdata/ -type f -user kirsty |wc -l
 $ find /home/usersdata/ -type f -user kirsty -exec cp --parent {} /media \; 
 Ref: https://stackoverflow.com/questions/2961673/find-missing-argument-to-exec
 $ ll /media/home/usersdata/
+
+Task: Linux User Without Home
+$ ssh steve@stapp02
+provide password then login as root user 
+$ sudo su
+$ id rose
+$ cat /etc/passwd/ |grep rose
+$ useradd -M rose
+$ id rose
+$ cat /etc/passwd/ |grep rose
+$ ll /home/ 
