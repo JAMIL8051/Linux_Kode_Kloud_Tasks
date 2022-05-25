@@ -32,3 +32,10 @@ $ useradd -M rose
 $ id rose
 $ cat /etc/passwd/ |grep rose
 $ ll /home/ 
+
+Task: substitution of string in a file
+$ ssh clint@stbkp01 then provide password as usual
+$ sudo su login as root user
+$ cat /root/nautilus.xml
+$ sed -i 's/String/Topedo/g' /root/nautilus.xml
+
