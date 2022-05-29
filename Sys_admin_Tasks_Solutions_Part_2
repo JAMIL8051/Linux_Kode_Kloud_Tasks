@@ -39,3 +39,22 @@ $ sudo su login as root user
 $ cat /root/nautilus.xml
 $ sed -i 's/String/Topedo/g' /root/nautilus.xml
 
+Task: Linux Banner
+$ ll /home/thor/nautilus_banner
+$ scp -r /home/thor/nautilus tony@stapp01:/tmp
+$ ssh -t tony@stapp01 'sudo mv /tmp/nautilus_banner /etc/motd'
+provide passwords as usual
+
+In this task we need to install openssh-clients package for the database server.
+$ ssh peter@stdb01 and enter password
+$ sudo yum install openssh-clients
+
+$ scp -r /home/thor/nautilus peter@stdb01:/tmp
+$ ssh -t peter@stdb01 'sudo mv /tmp/nautilus_banner /etc/motd'
+$ scp -r /home/thor/nautilus steve@stapp02:/tmp
+$ ssh -t steve@stapp02 'sudo mv /tmp/nautilus_banner /etc/motd'
+$ scp -r /home/thor/nautilus banner@stapp03:/tmp
+$ ssh -t banner@stapp03 'sudo mv /tmp/nautilus_banner /etc/motd'
+
+
+
